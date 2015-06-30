@@ -19,7 +19,7 @@ class AdaptiveClient implements ClientInterface
     public function __construct(array $options = array())
     {
         $this->options = $options;
-        $this->client = function_exists('curl_init') ? new Curl() : new FileGetContents();
+        $this->client = new FileGetContents();
     }
 
     public function send(RequestInterface $request, MessageInterface $response)
